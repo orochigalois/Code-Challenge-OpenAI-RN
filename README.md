@@ -37,3 +37,7 @@ yarn test
 ```
 ## Proof video
 
+
+https://github.com/orochigalois/Code-Challenge-OpenAI-RN/assets/4133977/da0ffb5b-8427-4caa-9fa0-a98c11f54353
+
+
