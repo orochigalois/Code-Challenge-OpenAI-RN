@@ -10,9 +10,16 @@ Step2. Under the root directory, duplicate **.env.dev** and rename to **.env**, 
 ```bash
 OPENAI_API_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
+
 Step3. Install the dependencies
 ```bash
 yarn
+```
+
+Step3.5 (ONLY for iOS, skip on Android) Install Pods
+```bash
+bundle install
+npx pod-install
 ```
 
 Step4. start Metro
