@@ -35,8 +35,11 @@ yarn android
 ```
 
 Step6. After app launched, use the following credentials to login
+
 Username: **Caremaster**
+
 Password: **caremaster**
+
 ## How to run test
 
 ```bash
