@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, TextInput, StyleSheet, ActivityIndicator } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginAsync } from './store/features/authSlice';
 
-import StyleButton from './components/StyleButton';
+import CustomButton from './components/CustomButton';
 
 const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
     const [username, setUsername] = useState('');
@@ -66,7 +66,7 @@ const LoginScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
             {loginStatus === 'loading' ? (
                 <ActivityIndicator size="small" color="#0000ff" testID="loading-indicator-test-id" />
             ) : (
-                <StyleButton color="#ffffff" title="Login" onPress={handleLogin} testID="login-button-test-id" />
+                <CustomButton title="Login" onPress={handleLogin} testID="login-button-test-id" />
             )}
         </View>
     );

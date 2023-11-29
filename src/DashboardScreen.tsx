@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, View, Text, StyleSheet, ScrollView, TextInput, ActivityIndicator } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchOpenAiData } from './services/openaiService';
 import { logoutAsync } from './store/features/authSlice';
-import { Dimensions, SafeAreaView } from 'react-native';
-import StyleButton from './components/StyleButton';
+import { SafeAreaView } from 'react-native';
+import CustomButton from './components/CustomButton';
 
-const screenWidth = Dimensions.get('window').width;
 
 const DashboardScreen: React.FC = ({ navigation }) => {
   const [openAiData, setOpenAiData] = useState('');
@@ -55,7 +54,9 @@ const DashboardScreen: React.FC = ({ navigation }) => {
             </Text>
           </ScrollView>
         }
-        <StyleButton color="#ffffff" title="Logout" onPress={handleLogout} testID="logout-button-test-id" disabled={loading} />
+        <View style={styles.logoutButtonContainer}>
+          <CustomButton title="Logout" onPress={handleLogout} disabled={loading} testID="logout-button-test-id" />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 5,
     marginBottom: 16,
-    height: 40,
+    height: 38,
     width: '100%',
     paddingLeft: 8,
     alignItems: 'center', // Align children vertically in the center
@@ -94,23 +95,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 16,
   },
-  scrollContainer22: {
-
-
-  },
   openAiData: {
     fontSize: 16,
     textAlign: 'center',
   },
-  logoutButton: {
+  logoutButtonContainer: {
     marginTop: 16,
   },
-  buttonContainer: {
-    marginTop: 10,
-    backgroundColor: '#2089dc', // Light blue background color
-    padding: 0,
-    borderRadius: 5,
-  }
+
 });
 
 export default DashboardScreen;

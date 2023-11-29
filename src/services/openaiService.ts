@@ -3,6 +3,7 @@ import { Config } from 'react-native-config';
 
 export const fetchOpenAiData = async (content: string): Promise<string> => {
   try {
+    console.log('fadfasdf'+Config.OPENAI_API_KEY);
     const response = await axios.post<string>(
       Config.OPENAI_API_URL,
       {
@@ -24,6 +25,7 @@ export const fetchOpenAiData = async (content: string): Promise<string> => {
 
     return response.data.choices[0].message.content;
   } catch (error) {
+    console.log(error)
     return 'Failed to fetch data from OpenAI API.\n'+ error;
   }
 };
